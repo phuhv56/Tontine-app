@@ -22,15 +22,16 @@
         <ng-template let-tontine pTemplate="listItem">
             <div class="ui-g-12">
                 <div class="car-details">
-                    <div class="card">
-                        <div class="ui-g">
+                    <div class="ui-g-12 card">
+                        <div class="ui-g-4">
                             <div class="ui-g-12">Mã: <b>{{tontine.id}}</b></div>
                             <div class="ui-g-12">Tên phường: <b>{{tontine.name}}</b></div>
                             <div class="ui-g-12">Ngày lập: <b>{{tontine.createdDate}}</b></div>
                             <div class="ui-g-12">Giá: <b>{{tontine.value}}</b></div>
-                            <div class="ui-g-12">
-                                <button class="input-tontine" pButton type="button" label="Thêm người chơi"></button>
-                            </div>
+                        </div>
+                        <div class="ui-g-4">
+                            <button pButton type="button" label="Xem chi tiết"
+                            [routerLink]="['/tontine', tontine.id]"></button>
                         </div>
                     </div>
                 </div>
