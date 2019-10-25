@@ -1,0 +1,26 @@
+<div class="p-grid p-align-center p-justify-center login-container">
+    <form [formGroup]="loginData" (ngSubmit)="onLogin(loginData.value)">
+
+        <div class="ui-g ui-fluid">
+            <div class="ui-g-12">
+                <h2>Đăng nhập</h2>
+            </div>
+            <div class="ui-g-12">
+                <div class="ui-inputgroup">
+                    <input type="text" pInputText placeholder="Username" formControlName="username">
+                </div>
+            </div>
+            <div class="ui-g-12">
+                <div class="ui-inputgroup">
+                    <input type="password" pInputText placeholder="Password" formControlName="pwd">
+                </div>
+            </div>
+            <div class="ui-g-12">
+                <button type="submit" label="Sign In" class="ui-button-info" pButton></button>
+            </div>
+            <div class="ui-g-12">
+                <button type="button" routerLink="/register" label="Sign Up" class="ui-button-warning" pButton></button>
+            </div>
+        </div>
+    </form>
+</div>

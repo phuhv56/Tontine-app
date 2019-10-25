@@ -1,0 +1,40 @@
+<div class="container tontine-list">
+    <p-dataView #dv [value]="tontines" [paginator]="true" [rows]="20" paginatorPosition="both" filterBy="name">
+        <p-header>
+            <div class="ui-helper-clearfix">
+                <div class="ui-g">
+                    <div class="ui-g-3 filter-container">
+                        <div style="position:relative">
+                            <input type="search" pInputText placeholder="Search by name"
+                                (keyup)="dv.filter($event.target.value)">
+                        </div>
+                    </div>
+                    <div class="ui-g-6" style="text-align: center;">
+                        <h3>Danh sách phường</h3>
+                    </div>
+                    <div class="ui-g-3" style="text-align:right">
+                        <button pButton type="button" label="Tạo phường mới"
+                            [routerLink]="['/create-tontine']"></button>
+                    </div>
+                </div>
+            </div>
+        </p-header>
+        <ng-template let-tontine pTemplate="listItem">
+            <div class="ui-g-12">
+                <div class="car-details">
+                    <div class="card">
+                        <div class="ui-g">
+                            <div class="ui-g-12">Mã: <b>{{tontine.id}}</b></div>
+                            <div class="ui-g-12">Tên phường: <b>{{tontine.name}}</b></div>
+                            <div class="ui-g-12">Ngày lập: <b>{{tontine.createdDate}}</b></div>
+                            <div class="ui-g-12">Giá: <b>{{tontine.value}}</b></div>
+                            <div class="ui-g-12">
+                                <button class="input-tontine" pButton type="button" label="Thêm người chơi"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+    </p-dataView>
+</div>

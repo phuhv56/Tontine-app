@@ -1,0 +1,28 @@
+{
+    "code": 200,
+    "message": "success",
+    "data": [
+        {
+            "id": 1,
+            "name": "Phường tháng 1",
+            "created_date": "10/8/2017",
+            "value": 2000000,
+            "owner": {
+                "id": 1,
+                "user_name": "phuhv3",
+                "full_name": "Hồ Văn Phú"
+            }
+        },
+        {
+            "id": 2,
+            "name": "Phường tháng 2",
+            "created_date": "13/8/2018",
+            "value": 5000000,
+            "owner": {
+                "id": 1,
+                "user_name": "phuhv1",
+                "full_name": "Hồ Văn Phú"
+            }
+        }
+    ]
+}
