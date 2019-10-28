@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tontine-create.component.css']
 })
 export class TontineCreateComponent implements OnInit {
+  display: boolean = false;
 
   constructor() { }
 
   ngOnInit() {
   }
-
+  
+  showDialog() {
+    this.display = true;
+  }
 }

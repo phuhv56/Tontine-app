@@ -12,7 +12,8 @@ import {DataViewModule} from 'primeng/dataview';
 import {PanelModule} from 'primeng/panel';
 import {DropdownModule} from 'primeng/dropdown';
 import {CalendarModule} from 'primeng/calendar';
-
+import {TableModule} from 'primeng/table';
+import {DialogModule} from 'primeng/dialog';
 
 import { AppComponent } from './app.component';
 import { TontineListComponent } from './pages/home/tontine-list/tontine-list.component';
@@ -26,6 +27,7 @@ import { TontineMonthComponent } from './components/tontine-month/tontine-month.
 import { HeaderComponent } from './components/header/header.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { TontineCreateComponent } from './pages/home/tontine-create/tontine-create.component';
+import { AddUserDialogComponent } from './components/add-user-dialog/add-user-dialog.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,8 @@ import { TontineCreateComponent } from './pages/home/tontine-create/tontine-crea
     TontineMonthComponent,
     HeaderComponent,
     NotFoundComponent,
-    TontineCreateComponent
+    TontineCreateComponent,
+    AddUserDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +56,9 @@ import { TontineCreateComponent } from './pages/home/tontine-create/tontine-crea
     PanelModule,
     DropdownModule,
     CalendarModule,
-    BrowserAnimationsModule
+    DialogModule,
+    BrowserAnimationsModule,
+    TableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

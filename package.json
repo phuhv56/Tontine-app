@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --open",
+    "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -21,6 +21,7 @@
     "@angular/platform-browser-dynamic": "~8.2.9",
     "@angular/router": "~8.2.9",
     "bootstrap": "^4.3.1",
+    "font-awesome": "^4.7.0",
     "jquery": "^3.4.1",
     "primeflex": "^1.0.0",
     "primeicons": "^2.0.0",

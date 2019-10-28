@@ -2,17 +2,19 @@ import { User } from './../../core/models/user';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-user-list',
-  templateUrl: './user-list.component.html',
-  styleUrls: ['./user-list.component.css']
+	selector: 'app-add-user-dialog',
+	templateUrl: './add-user-dialog.component.html',
+	styleUrls: ['./add-user-dialog.component.css']
 })
-export class UserListComponent implements OnInit {
-  cols: any[];
-  users: User[];
-  constructor() { }
+export class AddUserDialogComponent implements OnInit {
+	cols: any[];
+	users: User[];
+	selectedUsers: User[];
 
-  ngOnInit() {
-    this.cols = [
+	constructor() { }
+
+	ngOnInit() {
+		this.cols = [
 			{ field: 'id', header: 'Mã' },
 			{ field: 'fullName', header: 'Họ tên' },
 			{ field: 'userName', header: 'Tài khoản' },
@@ -33,6 +35,11 @@ export class UserListComponent implements OnInit {
 				"phone": "0963566027"
 			}
 		]
-  }
 
+	}
+
+
+	AddUserToTontine() {
+		console.log(this.selectedUsers.length);
+	}
 }

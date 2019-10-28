@@ -1,41 +1,33 @@
 <div class="container tontine-list">
-    <p-dataView #dv [value]="tontines" [paginator]="true" [rows]="20" paginatorPosition="both" filterBy="name">
-        <p-header>
-            <div class="ui-helper-clearfix">
-                <div class="ui-g">
-                    <div class="ui-g-3 filter-container">
-                        <div style="position:relative">
-                            <input type="search" pInputText placeholder="Search by name"
-                                (keyup)="dv.filter($event.target.value)">
-                        </div>
-                    </div>
-                    <div class="ui-g-6" style="text-align: center;">
-                        <h3>Danh sách phường</h3>
-                    </div>
-                    <div class="ui-g-3" style="text-align:right">
-                        <button pButton type="button" label="Tạo phường mới"
-                            [routerLink]="['/create-tontine']"></button>
-                    </div>
+    <p-table [value]="tontines">
+        <ng-template pTemplate="caption">
+            <h3>Danh sách phường</h3>
+            <div class="ui-helper-clearfix" style="text-align: right">
+                    <button type="button" pButton icon="fa fa-pencil" iconPos="left" label="Thêm phường mới" [routerLink]="['/create-tontine']"></button>
                 </div>
-            </div>
-        </p-header>
-        <ng-template let-tontine pTemplate="listItem">
-            <div class="ui-g-12">
-                <div class="car-details">
-                    <div class="ui-g-12 card">
-                        <div class="ui-g-4">
-                            <div class="ui-g-12">Mã: <b>{{tontine.id}}</b></div>
-                            <div class="ui-g-12">Tên phường: <b>{{tontine.name}}</b></div>
-                            <div class="ui-g-12">Ngày lập: <b>{{tontine.createdDate}}</b></div>
-                            <div class="ui-g-12">Giá: <b>{{tontine.value}}</b></div>
-                        </div>
-                        <div class="ui-g-4">
-                            <button pButton type="button" label="Xem chi tiết"
-                            [routerLink]="['/tontine', tontine.id]"></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </ng-template>
-    </p-dataView>
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Mã</th>
+                <th>Tên phường</th>
+                <th>Ngày lập</th>
+                <th>Giá</th>
+                <th>Người lập</th>
+                <th>Hành động</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-tontine>
+            <tr>
+                <td>{{tontine.id}}</td>
+                <td>{{tontine.name}}</td>
+                <td>{{tontine.createdDate}}</td>
+                <td>{{tontine.value}}</td>
+                <td>{{tontine.owner.fullName}}</td>
+                <td>
+                    <button type="button" pButton icon="fa fa-edit" iconPos="left" label="Sửa" (click)="edit(tontine)"></button>
+                    <button type="button" pButton icon="fa fa-remove" iconPos="left" label="Xóa" (click)="delete(tontine)" style="margin-left: 0.5em;" class="ui-button-warning"></button>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
 </div>
