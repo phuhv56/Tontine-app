@@ -1,4 +1,4 @@
-<div class="container ui-g ui-fluid">
+<div class="ui-g ui-fluid">
     <div class="ui-g-12 ui-md-12">
         <div class="ui-inputgroup">
             <input type="text" pInputText placeholder="Tên phường">
@@ -19,7 +19,7 @@
     </div>
 
     <div class="ui-g-12 ui-md-12">
-        <p-table>
+        <p-table [value]="users">
             <ng-template pTemplate="caption">
                 <div class="ui-helper-clearfix" style="text-align: right">
                     <button type="button" (click)="showDialog()" pButton icon="pi pi-info-circle" label="Thêm người chơi"></button>
@@ -33,7 +33,7 @@
                     <th>Xóa</th>
                 </tr>
             </ng-template>
-            <ng-template pTemplate="body">
+            <ng-template pTemplate="body" let-user>
                 <tr>
                     <td>1</td>
                     <td>Phú</td>
@@ -45,7 +45,7 @@
             </ng-template>
         </p-table>
     </div>
-    <p-dialog header="Thêm người chơi" [(visible)]="display" [modal]="true" [responsive]="true" [style]="{width: '50%', minWidth: '50%'}" [minY]="100" 
+    <p-dialog header="Thêm người chơi" [(visible)]="display" [modal]="true" [responsive]="true" [style]="{width: '50%', minWidth: '50%'}" [minY]="100"
         [maximizable]="true" [positionTop]="30" [baseZIndex]="10000">
         <app-add-user-dialog></app-add-user-dialog>
     </p-dialog>

@@ -3,7 +3,7 @@
         <ng-template pTemplate="caption">
             <h3>Danh sách phường</h3>
             <div class="ui-helper-clearfix" style="text-align: right">
-                    <button type="button" pButton icon="fa fa-pencil" iconPos="left" label="Thêm phường mới" [routerLink]="['/create-tontine']"></button>
+                    <button type="button" pButton icon="fa fa-pencil" iconPos="left" label="Thêm phường mới" [routerLink]="['/tontines/create']"></button>
                 </div>
         </ng-template>
         <ng-template pTemplate="header">
@@ -24,7 +24,7 @@
                 <td>{{tontine.value}}</td>
                 <td>{{tontine.owner.fullName}}</td>
                 <td>
-                    <button type="button" pButton icon="fa fa-edit" iconPos="left" label="Sửa" (click)="edit(tontine)"></button>
+                    <button type="button" pButton icon="fa fa-edit" iconPos="left" label="Sửa" [routerLink]="['/tontines/edit/', tontine.id]"></button>
                     <button type="button" pButton icon="fa fa-remove" iconPos="left" label="Xóa" (click)="delete(tontine)" style="margin-left: 0.5em;" class="ui-button-warning"></button>
                 </td>
             </tr>

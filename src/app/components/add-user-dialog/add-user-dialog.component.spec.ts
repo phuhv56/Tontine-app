@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AddUserDialogComponent } from './add-user-dialog.component';
+import {TableModule} from 'primeng/table';
+import {SimpleChange} from '@angular/core';
 
 describe('AddUserDialogComponent', () => {
   let component: AddUserDialogComponent;
@@ -8,7 +10,8 @@ describe('AddUserDialogComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AddUserDialogComponent ]
+      declarations: [ AddUserDialogComponent ],
+      imports: [TableModule]
     })
     .compileComponents();
   }));
@@ -21,5 +24,9 @@ describe('AddUserDialogComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should create', () => {
+    component.ngOnChanges({change: new SimpleChange(null, null, false)});
   });
 });

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {User} from '../../../core/models/user';
 
 @Component({
   selector: 'app-tontine-create',
@@ -6,13 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tontine-create.component.css']
 })
 export class TontineCreateComponent implements OnInit {
-  display: boolean = false;
+  display = false;
+  users: User[];
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
-  
+
   showDialog() {
     this.display = true;
   }
